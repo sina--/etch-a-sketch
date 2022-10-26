@@ -1,17 +1,35 @@
 html, body {
     background-color: beige;
+	display: flex;
+	flex-direction: column;
 }
+
+.header {
+		display: flex;
+		font-family: 'Press Start 2P';
+		align-items: center;
+		justify-content: center;
+		padding: 32px;
+}
+
+.board {
+    display: flex;
+	justify-content: center;
+}
+
 .canvas {
     display: grid;
-    flex-wrap: wrap;
     grid-template-columns: repeat(16, 1fr);
     width: 500px;
     height: 500px;
+	background-color: #ffffff;
+	box-shadow: 10px 10px;
+	aspect-ratio: 1 / 1;
 }
 
 .box {
-    border: solid 1px black;
     flex: 1;
     aspect-ratio: 1 / 1;
+	border: solid 1px black;
 }
 
