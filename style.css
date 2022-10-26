@@ -1,13 +1,17 @@
 html, body {
     background-color: beige;
 }
-.board {
-    display: flex;
+.canvas {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(16, 1fr);
+    width: 500px;
+    height: 500px;
 }
 
 .box {
-    width: 50px;
-    height: 50px;
     border: solid 1px black;
+    flex: 1;
+    aspect-ratio: 1 / 1;
 }
 
