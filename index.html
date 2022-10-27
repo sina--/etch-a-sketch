@@ -16,26 +16,26 @@
 		<div class="settingsPanel">
 			<div class="setting">
 				<div>Canvas Size:</div>
-				<input type="range" min="8" max="100" value="16" class="slider" id="canvasSize" onclick="resizeCanvas()">
-				<div id="canvasSizePrint">16 x 16</div>
-			</div>
-			<div class="setting">
 				<div>R:</div>
-				<input type="range" min="0" max="255" value="0" class="slider" id="penColorR" onclick="changePenColor()">
-				<div id="printColorR">0</div>
-			</div>
-			<div class="setting">
 				<div>G:</div>
-				<input type="range" min="0" max="255" value="0" class="slider" id="penColorG" onclick="changePenColor()">
-				<div id="printColorG">0</div>
-			</div>
-			<div class="setting">
 				<div>B:</div>
-				<input type="range" min="0" max="255" value="0" class="slider" id="penColorB" onclick="changePenColor()">
-				<div id="printColorB">0</div>
 			</div>
-			<div class="currentColor" id="currentColor"></div>
+            <div class="sliderBox">
+                <input type="range" min="8" max="100" value="16" class="slider" id="canvasSize" onclick="resizeCanvas()">
+                <input type="range" min="0" max="255" value="0" class="slider" id="penColorR" onclick="changePenColor()">
+                <input type="range" min="0" max="255" value="0" class="slider" id="penColorG" onclick="changePenColor()">
+                <input type="range" min="0" max="255" value="0" class="slider" id="penColorB" onclick="changePenColor()">
+            </div>
+            <div class="valuesBox">
+                <div id="canvasSizePrint">16 x 16</div>
+                <div id="printColorR">0</div>
+                <div id="printColorG">0</div>
+                <div id="printColorB">0</div>
+            </div>
+			<!---<div class="currentColor" id="currentColor"></div>--->
 		</div>
+		<div class="footer">Sina Wolper © 2022</div>
         <script src="scripts.js"></script>
     </body>
 </html >
+

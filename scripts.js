@@ -38,7 +38,7 @@ function changePenColor() {
 	document.getElementById("printColorR").textContent = inputColorR;
 	document.getElementById("printColorG").textContent = inputColorG;
 	document.getElementById("printColorB").textContent = inputColorB;
-	document.getElementById("currentColor").style.backgroundColor = penColor;
+	//document.getElementById("penColorR").style.backgroundColor = "rgb(" + inputColorR + ", 0, 0)";
 }
 
 
