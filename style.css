@@ -102,3 +102,16 @@ html, body {
 .footer {
 	margin-top: auto;
 }
+
+button {
+	height: 25px;
+	background: #ffffff;
+	border: solid 1px #000000;
+	margin-top: 12px;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #000000;
+	color: #ffffff;
+}
