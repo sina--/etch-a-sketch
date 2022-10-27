@@ -1,4 +1,5 @@
 let gridSize = 16;
+let penColor = "#000000";
 
 function drawCanvas() {
     let canvas = document.getElementById('canvas');
@@ -17,7 +18,7 @@ drawCanvas();
 function changeColor(event) {
     let boxId = event.target.id;
     let tempBox = document.getElementById(boxId);
-    tempBox.style.backgroundColor = '#000000';
+    tempBox.style.backgroundColor = penColor; 
 }
 
 function resizeCanvas() {
@@ -26,6 +27,11 @@ function resizeCanvas() {
     gridSize = inputSize;
 	canvas.textContent = '';
 	drawCanvas();
+}
+
+function changePenColor() {
+	const inputColor = window.prompt("Insert hex value", "#000000");
+	penColor = "#" + inputColor;
 }
 
 
