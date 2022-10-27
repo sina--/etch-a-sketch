@@ -13,8 +13,6 @@ function drawCanvas() {
     }
 }
 
-drawCanvas();
-
 function changeColor(event) {
     let boxId = event.target.id;
     let tempBox = document.getElementById(boxId);
@@ -44,4 +42,5 @@ function changePenColor() {
 	document.getElementById("penColorB").style.setProperty("--SliderColor","rgb(0, 0, " + inputColorB + ")");
 }
 
+drawCanvas();
 changePenColor();

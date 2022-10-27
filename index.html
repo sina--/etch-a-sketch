@@ -22,9 +22,9 @@
 			</div>
             <div class="sliderBox">
                 <input type="range" min="8" max="100" value="16" class="slider" id="canvasSize" onclick="resizeCanvas()">
-                <input type="range" min="0" max="255" value="0" class="slider" id="penColorR" onclick="changePenColor()">
-                <input type="range" min="0" max="255" value="0" class="slider" id="penColorG" onclick="changePenColor()">
-                <input type="range" min="0" max="255" value="0" class="slider" id="penColorB" onclick="changePenColor()">
+                <input type="range" min="0" max="255" value="0" class="slider" id="penColorR" oninput="changePenColor()">
+                <input type="range" min="0" max="255" value="0" class="slider" id="penColorG" oninput="changePenColor()">
+                <input type="range" min="0" max="255" value="0" class="slider" id="penColorB" oninput="changePenColor()">
             </div>
             <div class="valuesBox">
                 <div id="canvasSizePrint">16 x 16</div>
