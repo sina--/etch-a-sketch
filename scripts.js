@@ -38,7 +38,10 @@ function changePenColor() {
 	document.getElementById("printColorR").textContent = inputColorR;
 	document.getElementById("printColorG").textContent = inputColorG;
 	document.getElementById("printColorB").textContent = inputColorB;
-	//document.getElementById("penColorR").style.backgroundColor = "rgb(" + inputColorR + ", 0, 0)";
+	document.getElementById("canvasSize").style.setProperty("--SliderColor", penColor);
+	document.getElementById("penColorR").style.setProperty("--SliderColor","rgb(" + inputColorR + ", 0, 0)");
+	document.getElementById("penColorG").style.setProperty("--SliderColor","rgb(0, " + inputColorG + ", 0)");
+	document.getElementById("penColorB").style.setProperty("--SliderColor","rgb(0, 0, " + inputColorB + ")");
 }
 
-
+changePenColor();

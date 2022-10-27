@@ -82,14 +82,14 @@ html, body {
 	-webkit-appearance: none;
 	width: 25px;
 	height: 25px;
-	background: #000000;
+	background: var(--SliderColor);
 	cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
 	width: 25px;
 	height: 25px;
-	background: #000000;
+	background: var(--SliderColor);
 	cursor: pointer;
 }
 
