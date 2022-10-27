@@ -37,12 +37,20 @@ html, body {
 }
 
 .settingsPanel {
+	display: flex;
 	width: 500px;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.setting {
+	display: flex;
+	align-items: center;
 }
 
 .slider {
 	-webkit-appearance: none;
-	width: 500px;
+	width: 200px;
 	height: 25px;
 	background: #ffffff;
 	outline: none;
@@ -55,13 +63,19 @@ html, body {
 	-webkit-appearance: none;
 	width: 25px;
 	height: 25px;
-	background: #ff0000;
+	background: #000000;
 	cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
 	width: 25px;
 	height: 25px;
-	background: #ff0000;
+	background: #000000;
 	cursor: pointer;
+}
+
+.currentColor {
+	width: 25px;
+	height: 25px;
+	background: #000000;
 }
