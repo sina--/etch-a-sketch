@@ -3,8 +3,8 @@ let gridSize = 16;
 function drawCanvas() {
     let canvas = document.getElementById('canvas');
     for(i = 0; i < gridSize ** 2; i++) {
-		canvas.style.gridTemplateColumns = 'repeat( ' + gridSize + ', 1fr)';
         let box = document.createElement('div');
+		canvas.style.gridTemplateColumns = 'repeat( ' + gridSize + ', 1fr)';
         box.className = 'box';
         box.setAttribute('id', i);
         box.addEventListener('mouseover', changeColor);
@@ -22,6 +22,10 @@ function changeColor(event) {
 
 function resizeCanvas() {
     const inputSize = Number(window.prompt("Type a number", ""));
+	let canvas = document.getElementById('canvas');
     gridSize = inputSize;
+	canvas.textContent = '';
 	drawCanvas();
 }
+
+
