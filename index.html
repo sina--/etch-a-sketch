@@ -14,11 +14,13 @@
 			<div class="canvas" id="canvas"></div>
 		</div>
 		<div class="settingsPanel">
-			<div>Canvas Size:</div>
-			<div id="canvasSizePrint">16 x 16</div>
+			<div>Canvas Size:
+				<div id="canvasSizePrint">16 x 16</div>
+			</div>
 			<input type="range" min="8" max="100" value="16" class="slider" id="canvasSize" onclick="resizeCanvas()">
-			<input type="text" id="penColor">
-			<button onclick="changePenColor()">Pen Color</button>
+			<input type="range" min="0" max="255" value="0" class="slider" id="penColorR" onclick="changePenColor()">
+			<input type="range" min="0" max="255" value="0" class="slider" id="penColorG" onclick="changePenColor()">
+			<input type="range" min="0" max="255" value="0" class="slider" id="penColorB" onclick="changePenColor()">
 		</div>
         <script src="scripts.js"></script>
     </body>

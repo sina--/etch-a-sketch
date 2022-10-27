@@ -1,5 +1,5 @@
 let gridSize = 16;
-let penColor = "#000000";
+let penColor = 'rgb(0, 0, 0)';
 
 function drawCanvas() {
     let canvas = document.getElementById('canvas');
@@ -31,8 +31,10 @@ function resizeCanvas() {
 }
 
 function changePenColor() {
-	let inputColor = document.getElementById("penColor").value; 
-	penColor = "#" + inputColor;
+	let inputColorR = document.getElementById("penColorR").value; 
+	let inputColorG = document.getElementById("penColorG").value; 
+	let inputColorB = document.getElementById("penColorB").value; 
+	penColor = "rgb(" + inputColorR + "," + inputColorG + "," + inputColorB + ")";
 }
 
 

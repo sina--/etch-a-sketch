@@ -2,6 +2,9 @@ html, body {
     background-color: beige;
 	display: flex;
 	flex-direction: column;
+	font-family: 'Press Start 2P';
+	font-size: 10px;
+	align-items: center;
 }
 
 .header {
@@ -10,6 +13,7 @@ html, body {
 	align-items: center;
 	justify-content: center;
 	padding: 32px;
+	font-size: 24px;
 }
 
 .board {
@@ -33,9 +37,7 @@ html, body {
 }
 
 .settingsPanel {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	width: 500px;
 }
 
 .slider {
