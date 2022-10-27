@@ -14,8 +14,9 @@
 			<div class="canvas" id="canvas"></div>
 		</div>
 		<div class="settingsPanel">
-			<input type="text" id="canvasSize">
-			<button onclick="resizeCanvas()">Canvas Size</button>
+			<div>Canvas Size:</div>
+			<div id="canvasSizePrint">16 x 16</div>
+			<input type="range" min="8" max="100" value="16" class="slider" id="canvasSize" onclick="resizeCanvas()">
 			<input type="text" id="penColor">
 			<button onclick="changePenColor()">Pen Color</button>
 		</div>

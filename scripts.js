@@ -23,6 +23,8 @@ function changeColor(event) {
 
 function resizeCanvas() {
 	let inputSize = document.getElementById('canvasSize').value;
+	let canvasSize = document.getElementById("canvasSizePrint");
+	canvasSizePrint.textContent = inputSize + " x " + inputSize;
     gridSize = inputSize;
 	canvas.textContent = '';
 	drawCanvas();

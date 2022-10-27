@@ -32,3 +32,34 @@ html, body {
     aspect-ratio: 1 / 1;
 }
 
+.settingsPanel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 500px;
+	height: 25px;
+	background: #ffffff;
+	outline: none;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+	outline: solid 1px black;
+}
+
+.slider::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	width: 25px;
+	height: 25px;
+	background: #ff0000;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #ff0000;
+	cursor: pointer;
+}
