@@ -22,15 +22,14 @@ function changeColor(event) {
 }
 
 function resizeCanvas() {
-    const inputSize = Number(window.prompt("Type a number", ""));
-	let canvas = document.getElementById('canvas');
+	let inputSize = document.getElementById('canvasSize').value;
     gridSize = inputSize;
 	canvas.textContent = '';
 	drawCanvas();
 }
 
 function changePenColor() {
-	const inputColor = window.prompt("Insert hex value", "#000000");
+	let inputColor = document.getElementById("penColor").value; 
 	penColor = "#" + inputColor;
 }
 

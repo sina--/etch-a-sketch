@@ -5,11 +5,11 @@ html, body {
 }
 
 .header {
-		display: flex;
-		font-family: 'Press Start 2P';
-		align-items: center;
-		justify-content: center;
-		padding: 32px;
+	display: flex;
+	font-family: 'Press Start 2P';
+	align-items: center;
+	justify-content: center;
+	padding: 32px;
 }
 
 .board {
@@ -29,8 +29,6 @@ html, body {
 }
 
 .box {
-    flex: 1;
     aspect-ratio: 1 / 1;
-	border: solid 1px black;
 }
 
