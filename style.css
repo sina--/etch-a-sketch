@@ -114,6 +114,8 @@ button {
 	border: solid 1px #000000;
 	margin-top: 2px;
 	cursor: pointer;
+	font-family: 'Press Start 2P';
+	font-size: 8px;
 }
 
 button:hover {
