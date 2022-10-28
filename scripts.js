@@ -90,7 +90,7 @@ function rainbow() {
 	document.getElementById('printColorG').textContent = g;
 	document.getElementById('printColorB').textContent = b;
 	document.getElementById('header').style.setProperty('--red','rgb('+ r + ', 0, 0)');
-	document.getElementById('header').style.setProperty('--cyan,'rgb(0, 0, ' + b + ')');
+	document.getElementById('header').style.setProperty('--cyan','rgb(0, 0, ' + b + ')');
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	document.getElementById('penColorR').style.setProperty('--SliderColor','rgb('+ r + ', 0, 0)');
 	document.getElementById('penColorG').style.setProperty('--SliderColor','rgb(0, ' + g + ', 0)');
