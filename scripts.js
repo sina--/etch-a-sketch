@@ -21,8 +21,6 @@ function drawCanvas() {
 function modeSelector(selection) {
 	if (selection === modes[0]) {
 		activeMode = modes[0];
-		document.getElementById('penBtn').style.setProperty('background', '#000000');
-		document.getElementById('penBtn').style.setProperty('color', '#ffffff');
 	}
 	if (selection === modes[1]) {
 		activeMode = modes[1];
@@ -64,7 +62,7 @@ function pen(event) {
     let boxId = event.target.id;
     let tempBox = document.getElementById(boxId);
 	if (activeMode === modes[0]) {
-		penColor = penColor;
+		penColor = changePenColor();
 	}
 	if (activeMode === modes[1]) {
 		penColor = '#ffffff';
@@ -89,7 +87,8 @@ function rainbow() {
 	document.getElementById('penColorR').value = r;
 	document.getElementById('penColorG').value = g;
 	document.getElementById('penColorB').value = b;
-	return('rgb(' + r + ', ' + g + ', ' + b + ')');
+	penColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+	return(penColor);
 }
 
 function resizeCanvas() {
@@ -105,7 +104,6 @@ function changePenColor() {
 	let inputColorR = document.getElementById('penColorR').value; 
 	let inputColorG = document.getElementById('penColorG').value; 
 	let inputColorB = document.getElementById('penColorB').value; 
-	penColor = 'rgb(' + inputColorR + ',' + inputColorG + ',' + inputColorB + ')';
 	document.getElementById('printColorR').textContent = inputColorR;
 	document.getElementById('printColorG').textContent = inputColorG;
 	document.getElementById('printColorB').textContent = inputColorB;
@@ -113,6 +111,8 @@ function changePenColor() {
 	document.getElementById('penColorR').style.setProperty('--SliderColor','rgb('+ inputColorR + ', 0, 0)');
 	document.getElementById('penColorG').style.setProperty('--SliderColor','rgb(0, ' + inputColorG + ', 0)');
 	document.getElementById('penColorB').style.setProperty('--SliderColor','rgb(0, 0, ' + inputColorB + ')');
+	penColor = 'rgb(' + inputColorR + ',' + inputColorG + ',' + inputColorB + ')';
+	return(penColor);
 }
 
 drawCanvas();
