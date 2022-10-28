@@ -20,23 +20,15 @@ function drawCanvas() {
 
 function resizeCanvas() {
 	let inputSize = document.getElementById('canvasSize').value;
-	let canvasSize = document.getElementById('canvasSizePrint');
 	canvasSizePrint.textContent = inputSize + ' x ' + inputSize;
     gridSize = inputSize;
 	canvas.textContent = '';
 	drawCanvas();
 }
 
-function modeSelector(selection) {
-	if (selection === modes[0]) {
-		activeMode = modes[0];
-	}
-	if (selection === modes[1]) {
-		activeMode = modes[1];
-	}
-	if (selection === modes[2]) {
-		activeMode = modes[2];
-	}
+function modeSelector(event) {
+	let mode = event.target.id;
+	activeMode = mode.slice(0, -3);
 	indicateMode();
 }
 

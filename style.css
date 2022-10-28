@@ -122,8 +122,8 @@ button:hover {
 	color: #ffffff;
 }
 
-button:active, button.active {
-	background: #000000;
+button-active {
+	background: #ff0000;
 	color: #ffffff;
 }
 
