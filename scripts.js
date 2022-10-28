@@ -91,6 +91,7 @@ function rainbow() {
 	document.getElementById('printColorB').textContent = b;
 	document.getElementById('header').style.setProperty('--red','rgb('+ r + ', 0, 0)');
 	document.getElementById('header').style.setProperty('--cyan','rgb(0, 0, ' + b + ')');
+	penColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	document.getElementById('penColorR').style.setProperty('--SliderColor','rgb('+ r + ', 0, 0)');
 	document.getElementById('penColorG').style.setProperty('--SliderColor','rgb(0, ' + g + ', 0)');
@@ -98,7 +99,6 @@ function rainbow() {
 	document.getElementById('penColorR').value = r;
 	document.getElementById('penColorG').value = g;
 	document.getElementById('penColorB').value = b;
-	penColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
 	return(penColor);
 }
 
@@ -111,11 +111,11 @@ function changePenColor() {
 	document.getElementById('printColorB').textContent = inputColorB;
 	document.getElementById('header').style.setProperty('--red', 'red');
 	document.getElementById('header').style.setProperty('--cyan', 'cyan');
+	penColor = 'rgb(' + inputColorR + ',' + inputColorG + ',' + inputColorB + ')';
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	document.getElementById('penColorR').style.setProperty('--SliderColor','rgb('+ inputColorR + ', 0, 0)');
 	document.getElementById('penColorG').style.setProperty('--SliderColor','rgb(0, ' + inputColorG + ', 0)');
 	document.getElementById('penColorB').style.setProperty('--SliderColor','rgb(0, 0, ' + inputColorB + ')');
-	penColor = 'rgb(' + inputColorR + ',' + inputColorG + ',' + inputColorB + ')';
 	return(penColor);
 }
 
