@@ -107,10 +107,6 @@ html, body {
 	background: #000000;
 }
 
-.footer {
-	margin-top: auto;
-}
-
 button {
 	height: 27px;
 	background: #ffffff;
@@ -129,4 +125,9 @@ button:hover {
 button:active, button.active {
 	background: #000000;
 	color: #ffffff;
+}
+
+.footer {
+	margin-top: auto;
+	padding-bottom: 10px;
 }
