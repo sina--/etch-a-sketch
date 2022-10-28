@@ -18,6 +18,15 @@ function drawCanvas() {
 	}
 }
 
+function resizeCanvas() {
+	let inputSize = document.getElementById('canvasSize').value;
+	let canvasSize = document.getElementById('canvasSizePrint');
+	canvasSizePrint.textContent = inputSize + ' x ' + inputSize;
+    gridSize = inputSize;
+	canvas.textContent = '';
+	drawCanvas();
+}
+
 function modeSelector(selection) {
 	if (selection === modes[0]) {
 		activeMode = modes[0];
@@ -80,6 +89,8 @@ function rainbow() {
 	document.getElementById('printColorR').textContent = r;
 	document.getElementById('printColorG').textContent = g;
 	document.getElementById('printColorB').textContent = b;
+	document.getElementById('header').style.setProperty('--red', 'rgb('+ r + ', 0, 0)');
+	document.getElementById('header').style.setProperty('--cyan', 'rgb(0, ' + g + ', 0)');
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	document.getElementById('penColorR').style.setProperty('--SliderColor','rgb('+ r + ', 0, 0)');
 	document.getElementById('penColorG').style.setProperty('--SliderColor','rgb(0, ' + g + ', 0)');
@@ -91,15 +102,6 @@ function rainbow() {
 	return(penColor);
 }
 
-function resizeCanvas() {
-	let inputSize = document.getElementById('canvasSize').value;
-	let canvasSize = document.getElementById('canvasSizePrint');
-	canvasSizePrint.textContent = inputSize + ' x ' + inputSize;
-    gridSize = inputSize;
-	canvas.textContent = '';
-	drawCanvas();
-}
-
 function changePenColor() {
 	let inputColorR = document.getElementById('penColorR').value; 
 	let inputColorG = document.getElementById('penColorG').value; 
@@ -107,6 +109,8 @@ function changePenColor() {
 	document.getElementById('printColorR').textContent = inputColorR;
 	document.getElementById('printColorG').textContent = inputColorG;
 	document.getElementById('printColorB').textContent = inputColorB;
+	document.getElementById('header').style.setProperty('--red', 'red');
+	document.getElementById('header').style.setProperty('--cyan', 'cyan');
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	document.getElementById('penColorR').style.setProperty('--SliderColor','rgb('+ inputColorR + ', 0, 0)');
 	document.getElementById('penColorG').style.setProperty('--SliderColor','rgb(0, ' + inputColorG + ', 0)');

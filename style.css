@@ -1,5 +1,6 @@
 html, body {
     background-color: beige;
+	margin: 0px;
 	display: flex;
 	flex-direction: column;
 	font-family: 'Press Start 2P';
@@ -15,7 +16,9 @@ html, body {
 	align-items: center;
 	justify-content: center;
 	padding-top: 32px;
-	font-size: 24px;
+	font-size: 36px;
+	font-weight: bold;
+	text-shadow: -0.12em 0 var(--red), 0.12em 0 var(--cyan);
 }
 
 .board {
