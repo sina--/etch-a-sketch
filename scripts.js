@@ -117,3 +117,4 @@ function changePenColor() {
 
 drawCanvas();
 changePenColor();
+indicateMode();

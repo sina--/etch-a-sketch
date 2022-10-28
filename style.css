@@ -45,6 +45,11 @@ html, body {
 	justify-content: space-between;
 }
 
+.toolBox {
+	display: flex;
+	flex-direction: column;
+}
+
 .setting {
 	display: flex;
 	flex-direction: column;
@@ -104,10 +109,10 @@ html, body {
 }
 
 button {
-	height: 25px;
+	height: 27px;
 	background: #ffffff;
 	border: solid 1px #000000;
-	margin-top: 12px;
+	margin-top: 2px;
 	cursor: pointer;
 }
 

@@ -14,6 +14,12 @@
 			<div class="canvas" id="canvas"></div>
 		</div>
 		<div class="settingsPanel">
+			<div class="toolBox">
+				<button id="penBtn" onclick="modeSelector('pen')">Pen</button>
+				<button id="eraserBtn" onclick="modeSelector('eraser')">Eraser</button>
+				<button id="rainbowBtn" onclick="modeSelector('rainbow')">Rainbow</button>
+				<button id="clearCanvas" onclick="resizeCanvas()">Clear</button>
+			</div>
 			<div class="setting">
 				<div>Canvas Size:</div>
 				<div>R:</div>
@@ -33,9 +39,6 @@
                 <div id="printColorB">0</div>
             </div>
 		</div>
-		<button id="penBtn" onclick="modeSelector('pen')">Pen</button>
-		<button id="eraserBtn" onclick="modeSelector('eraser')">Eraser</button>
-		<button id="rainbowBtn" onclick="modeSelector('rainbow')">Rainbow</button>
 		<div class="footer">Sina Wolper © 2022</div>
         <script src="scripts.js"></script>
     </body>
