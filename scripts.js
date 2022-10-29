@@ -57,15 +57,15 @@ function pen(event) {
 
 function changePenColor() {
 	const setRGB = defaultPenColor;
-	let printColorValues = document.getElementById('printColorValues');
-	let colorValues = document.getElementById('colorValues');
+	let printColorValues = document.querySelectorAll('[id^=printColor]')
+	let colorValues = document.querySelectorAll('[id^=penColor]');
 	for(let i = 0; i < setRGB.length; i++) {
-		setRGB[i] = colorValues.children[i].value; 
-		printColorValues.children[i].textContent = setRGB[i];
+		setRGB[i] = colorValues[i].value; 
+		printColorValues[i].textContent = setRGB[i];
 		let rgbBuffer = [0,0,0]
 		rgbBuffer[i] = setRGB[i];
-		colorValues.children[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
-		colorValues.children[i].value = setRGB[i];
+		colorValues[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
+		colorValues[i].value = setRGB[i];
 	}
 	penColor = 'rgb(' + setRGB.join() + ')';
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
@@ -74,15 +74,15 @@ function changePenColor() {
 
 function rainbow() {
 	const randomRGB = defaultPenColor;
-	let printColorValues = document.getElementById('printColorValues');
-	let colorValues = document.getElementById('colorValues');
+	let printColorValues = document.querySelectorAll('[id^=printColor]');
+	let colorValues = document.querySelectorAll('[id^=penColor]');
 	for(let i = 0; i < randomRGB.length; i++) {
 		randomRGB[i] = Math.floor(Math.random() * 255);
-		printColorValues.children[i].textContent = randomRGB[i];
+		printColorValues[i].textContent = randomRGB[i];
 		let rgbBuffer = [0,0,0]
 		rgbBuffer[i] = randomRGB[i];
-		colorValues.children[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
-		colorValues.children[i].value = randomRGB[i];
+		colorValues[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
+		colorValues[i].value = randomRGB[i];
 	}
 	penColor = 'rgb(' + randomRGB.join() + ')';
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
