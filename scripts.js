@@ -67,7 +67,7 @@ function changePenColor() {
 		colorValues[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
 		colorValues[i].value = setRGB[i];
 	}
-	penColor = 'rgb(' + setRGB.join() + ')';
+	penColor = `rgb(${setRGB.join()})`;
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	document.getElementById('header').style.setProperty('--red', 'red');
 	document.getElementById('header').style.setProperty('--cyan', 'cyan');
@@ -86,7 +86,7 @@ function rainbow() {
 		colorValues[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
 		colorValues[i].value = randomRGB[i];
 	}
-	penColor = 'rgb(' + randomRGB.join() + ')';
+	penColor = `rgb(${randomRGB.join()})`;
 	document.getElementById('header').style.setProperty('--red','rgb('+ randomRGB[0] + ', 0, 0)');
 	document.getElementById('header').style.setProperty('--cyan','rgb(0,' + randomRGB.slice(-2).join()  + ')');
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
