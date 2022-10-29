@@ -69,6 +69,8 @@ function changePenColor() {
 	}
 	penColor = 'rgb(' + setRGB.join() + ')';
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
+	document.getElementById('header').style.setProperty('--red', 'red');
+	document.getElementById('header').style.setProperty('--cyan', 'cyan');
 	return(penColor);
 }
 
@@ -85,6 +87,8 @@ function rainbow() {
 		colorValues[i].value = randomRGB[i];
 	}
 	penColor = 'rgb(' + randomRGB.join() + ')';
+	document.getElementById('header').style.setProperty('--red','rgb('+ randomRGB[0] + ', 0, 0)');
+	document.getElementById('header').style.setProperty('--cyan','rgb(0,' + randomRGB.slice(-2).join()  + ')');
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	return(penColor);
 }
