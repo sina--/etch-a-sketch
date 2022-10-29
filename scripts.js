@@ -64,7 +64,7 @@ function changePenColor() {
 		printColorValues[i].textContent = setRGB[i];
 		let rgbBuffer = [0,0,0]
 		rgbBuffer[i] = setRGB[i];
-		colorValues[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
+		colorValues[i].style.setProperty('--SliderColor', `rgb(${rgbBuffer})`);
 		colorValues[i].value = setRGB[i];
 	}
 	penColor = `rgb(${setRGB.join()})`;
@@ -83,12 +83,12 @@ function rainbow() {
 		printColorValues[i].textContent = randomRGB[i];
 		let rgbBuffer = [0,0,0]
 		rgbBuffer[i] = randomRGB[i];
-		colorValues[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
+		colorValues[i].style.setProperty('--SliderColor', `rgb(${rgbBuffer})`);
 		colorValues[i].value = randomRGB[i];
 	}
 	penColor = `rgb(${randomRGB.join()})`;
-	document.getElementById('header').style.setProperty('--red','rgb('+ randomRGB[0] + ', 0, 0)');
-	document.getElementById('header').style.setProperty('--cyan','rgb(0,' + randomRGB.slice(-2).join()  + ')');
+	document.getElementById('header').style.setProperty('--red',`rgb(${randomRGB[0]}, 0, 0)`);
+	document.getElementById('header').style.setProperty('--cyan',`rgb(0,${randomRGB.slice(-2).join()})`);
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	return(penColor);
 }
