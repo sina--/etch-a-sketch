@@ -1,9 +1,9 @@
 const defaultGridSize = 16;
-const defaultPenColor = 'rgb(0, 0, 0)';
+const defaultPenColor = [0,0,0];
 const modes = ['pen', 'eraser', 'rainbow'];
 
 let gridSize = defaultGridSize;
-let penColor = defaultPenColor;
+let penColor = 'rgb(' + defaultPenColor.join() + ')';
 let activeMode = modes[0];
 document.getElementById('pen').classList.add('activeButton');
 
@@ -55,40 +55,37 @@ function pen(event) {
 	tempBox.style.backgroundColor = penColor; 
 }
 
-function rainbow() {
-	const r = Math.floor(Math.random() * 255);
-	const g = Math.floor(Math.random() * 255);
-	const b = Math.floor(Math.random() * 255);
-	document.getElementById('printColorR').textContent = r;
-	document.getElementById('printColorG').textContent = g;
-	document.getElementById('printColorB').textContent = b;
-	document.getElementById('header').style.setProperty('--red','rgb('+ r + ', 0, 0)');
-	document.getElementById('header').style.setProperty('--cyan','rgb(0, ' + g + ', ' + b + ')');
-	penColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+function changePenColor() {
+	const setRGB = defaultPenColor;
+	let printColorValues = document.getElementById('printColorValues');
+	let colorValues = document.getElementById('colorValues');
+	for(let i = 0; i < setRGB.length; i++) {
+		setRGB[i] = colorValues.children[i].value; 
+		printColorValues.children[i].textContent = setRGB[i];
+		let rgbBuffer = [0,0,0]
+		rgbBuffer[i] = setRGB[i];
+		colorValues.children[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
+		colorValues.children[i].value = setRGB[i];
+	}
+	penColor = 'rgb(' + setRGB.join() + ')';
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
-	document.getElementById('penColorR').style.setProperty('--SliderColor','rgb('+ r + ', 0, 0)');
-	document.getElementById('penColorG').style.setProperty('--SliderColor','rgb(0, ' + g + ', 0)');
-	document.getElementById('penColorB').style.setProperty('--SliderColor','rgb(0, 0, ' + b + ')');
-	document.getElementById('penColorR').value = r;
-	document.getElementById('penColorG').value = g;
-	document.getElementById('penColorB').value = b;
 	return(penColor);
 }
 
-function changePenColor() {
-	let inputColorR = document.getElementById('penColorR').value; 
-	let inputColorG = document.getElementById('penColorG').value; 
-	let inputColorB = document.getElementById('penColorB').value; 
-	document.getElementById('printColorR').textContent = inputColorR;
-	document.getElementById('printColorG').textContent = inputColorG;
-	document.getElementById('printColorB').textContent = inputColorB;
-	document.getElementById('header').style.setProperty('--red', 'red');
-	document.getElementById('header').style.setProperty('--cyan', 'cyan');
-	penColor = 'rgb(' + inputColorR + ',' + inputColorG + ',' + inputColorB + ')';
+function rainbow() {
+	const randomRGB = defaultPenColor;
+	let printColorValues = document.getElementById('printColorValues');
+	let colorValues = document.getElementById('colorValues');
+	for(let i = 0; i < randomRGB.length; i++) {
+		randomRGB[i] = Math.floor(Math.random() * 255);
+		printColorValues.children[i].textContent = randomRGB[i];
+		let rgbBuffer = [0,0,0]
+		rgbBuffer[i] = randomRGB[i];
+		colorValues.children[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
+		colorValues.children[i].value = randomRGB[i];
+	}
+	penColor = 'rgb(' + randomRGB.join() + ')';
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
-	document.getElementById('penColorR').style.setProperty('--SliderColor','rgb('+ inputColorR + ', 0, 0)');
-	document.getElementById('penColorG').style.setProperty('--SliderColor','rgb(0, ' + inputColorG + ', 0)');
-	document.getElementById('penColorB').style.setProperty('--SliderColor','rgb(0, 0, ' + inputColorB + ')');
 	return(penColor);
 }
 
