@@ -3,7 +3,7 @@ const defaultPenColor = [0,0,0];
 const modes = ['pen', 'eraser', 'rainbow'];
 
 let gridSize = defaultGridSize;
-let penColor = 'rgb(' + defaultPenColor.join() + ')';
+let penColor = `rgb(${defaultPenColor.join()})`;
 let activeMode = modes[0];
 document.getElementById('pen').classList.add('activeButton');
 
@@ -11,7 +11,7 @@ function drawCanvas() {
     let canvas = document.getElementById('canvas');
     for(i = 0; i < gridSize ** 2; i++) {
         let box = document.createElement('div');
-		canvas.style.gridTemplateColumns = 'repeat( ' + gridSize + ', 1fr)';
+		canvas.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
         box.className = 'box';
         box.setAttribute('id', i);
 		box.addEventListener('mouseover', pen);
@@ -21,7 +21,7 @@ function drawCanvas() {
 
 function resizeCanvas() {
 	let inputSize = document.getElementById('canvasSize').value;
-	canvasSizePrint.textContent = inputSize + ' x ' + inputSize;
+	canvasSizePrint.textContent = `${inputSize} x ${inputSize}`;
     gridSize = inputSize;
 	canvas.textContent = '';
 	drawCanvas();
