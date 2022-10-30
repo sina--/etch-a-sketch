@@ -1,9 +1,9 @@
 const defaultGridSize = 16;
-const defaultPenColor = [0,0,0];
-const modes = ['pen', 'eraser', 'rainbow'];
+const defaultPenColor = [0,0,0,1];
+const modes = ['pen', 'eraser', 'rainbow',];
 
 let gridSize = defaultGridSize;
-let penColor = `rgb(${defaultPenColor.join()})`;
+let penColor = `rgba(${defaultPenColor.join()})`;
 let activeMode = modes[0];
 document.getElementById('pen').classList.add('activeButton');
 
