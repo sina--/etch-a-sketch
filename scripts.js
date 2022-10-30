@@ -43,7 +43,7 @@ function modeSelector(event) {
 function pen(event) {
     let boxId = event.target.id;
     let tempBox = document.getElementById(boxId);
-	//if (activeMode != modes[3]) {
+	if (activeMode != modes[3]) {
 		if (activeMode === modes[0]) {
 			penColor = changePenColor();
 		}
@@ -53,10 +53,18 @@ function pen(event) {
 		if (activeMode === modes[2]) {
 			penColor = rainbow();
 		}
-		if (activeMode === modes[3]) {
-			penColor = alpha();
-		}
 		tempBox.style.backgroundColor = penColor;
+	}
+	if (activeMode === modes[3]) {
+		penColor = alpha();
+		tempBoxAlpha = tempBox.style.backgroundColor.getNums();
+		if (tempBoxAlpha[3] in window) {
+			tempBox.style.backgroundColor = penColor;
+		} else if (tempBoxAlpha[3] < 1) {
+			tempBoxAlpha[3] += 0.2;
+			tempBox.style.backgroundColor = `rgba(${tempBoxAlpha})`;
+		}
+	}
 }
 
 function changePenColor() {
@@ -105,3 +113,9 @@ function alpha() {
 
 drawCanvas();
 changePenColor();
+
+String.prototype.getNums= function(){
+    var rx=/[+-]?((\.\d+)|(\d+(\.\d+)?)([eE][+-]?\d+)?)/g,
+    mapN= this.match(rx) || [];
+    return mapN.map(Number);
+};
