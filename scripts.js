@@ -1,6 +1,6 @@
 const defaultGridSize = 16;
 const defaultPenColor = [0,0,0,1];
-const modes = ['pen', 'eraser', 'rainbow',];
+const modes = ['pen', 'eraser', 'rainbow', 'alpha'];
 
 let gridSize = defaultGridSize;
 let penColor = `rgba(${defaultPenColor.join()})`;
@@ -43,16 +43,20 @@ function modeSelector(event) {
 function pen(event) {
     let boxId = event.target.id;
     let tempBox = document.getElementById(boxId);
-	if (activeMode === modes[0]) {
-		penColor = changePenColor();
-	}
-	if (activeMode === modes[1]) {
-		penColor = '#ffffff';
-	}
-	if (activeMode === modes[2]) {
-		penColor = rainbow();
-	}
-	tempBox.style.backgroundColor = penColor; 
+	//if (activeMode != modes[3]) {
+		if (activeMode === modes[0]) {
+			penColor = changePenColor();
+		}
+		if (activeMode === modes[1]) {
+			penColor = '#ffffff';
+		}
+		if (activeMode === modes[2]) {
+			penColor = rainbow();
+		}
+		if (activeMode === modes[3]) {
+			penColor = alpha();
+		}
+		tempBox.style.backgroundColor = penColor;
 }
 
 function changePenColor() {
@@ -90,6 +94,12 @@ function rainbow() {
 	document.getElementById('header').style.setProperty('--red',`rgb(${randomRGB[0]}, 0, 0)`);
 	document.getElementById('header').style.setProperty('--cyan',`rgb(0,${randomRGB.slice(-2).join()})`);
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
+	return(penColor);
+}
+
+function alpha() {
+	const penPressure = [0,0,0,0.2];
+	penColor = `rgba(${penPressure.join()})`;
 	return(penColor);
 }
 
