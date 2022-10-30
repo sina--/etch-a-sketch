@@ -3,7 +3,7 @@ const defaultPenColor = [0,0,0];
 const modes = ['pen', 'eraser', 'rainbow'];
 
 let gridSize = defaultGridSize;
-let penColor = 'rgb(' + defaultPenColor.join() + ')';
+let penColor = `rgb(${defaultPenColor.join()})`;
 let activeMode = modes[0];
 document.getElementById('pen').classList.add('activeButton');
 
@@ -11,7 +11,7 @@ function drawCanvas() {
     let canvas = document.getElementById('canvas');
     for(i = 0; i < gridSize ** 2; i++) {
         let box = document.createElement('div');
-		canvas.style.gridTemplateColumns = 'repeat( ' + gridSize + ', 1fr)';
+		canvas.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
         box.className = 'box';
         box.setAttribute('id', i);
 		box.addEventListener('mouseover', pen);
@@ -21,7 +21,7 @@ function drawCanvas() {
 
 function resizeCanvas() {
 	let inputSize = document.getElementById('canvasSize').value;
-	canvasSizePrint.textContent = inputSize + ' x ' + inputSize;
+	canvasSizePrint.textContent = `${inputSize} x ${inputSize}`;
     gridSize = inputSize;
 	canvas.textContent = '';
 	drawCanvas();
@@ -64,7 +64,7 @@ function changePenColor() {
 		printColorValues[i].textContent = setRGB[i];
 		let rgbBuffer = [0,0,0]
 		rgbBuffer[i] = setRGB[i];
-		colorValues[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
+		colorValues[i].style.setProperty('--SliderColor', `rgb(${rgbBuffer})`);
 		colorValues[i].value = setRGB[i];
 	}
 	penColor = `rgb(${setRGB.join()})`;
@@ -83,12 +83,12 @@ function rainbow() {
 		printColorValues[i].textContent = randomRGB[i];
 		let rgbBuffer = [0,0,0]
 		rgbBuffer[i] = randomRGB[i];
-		colorValues[i].style.setProperty('--SliderColor', 'rgb(' + rgbBuffer + ')');
+		colorValues[i].style.setProperty('--SliderColor', `rgb(${rgbBuffer})`);
 		colorValues[i].value = randomRGB[i];
 	}
 	penColor = `rgb(${randomRGB.join()})`;
-	document.getElementById('header').style.setProperty('--red','rgb('+ randomRGB[0] + ', 0, 0)');
-	document.getElementById('header').style.setProperty('--cyan','rgb(0,' + randomRGB.slice(-2).join()  + ')');
+	document.getElementById('header').style.setProperty('--red',`rgb(${randomRGB[0]}, 0, 0)`);
+	document.getElementById('header').style.setProperty('--cyan',`rgb(0,${randomRGB.slice(-2).join()})`);
 	document.getElementById('canvasSize').style.setProperty('--SliderColor', penColor);
 	return(penColor);
 }
