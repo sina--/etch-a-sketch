@@ -49,6 +49,7 @@ function pen(event) {
 		}
 		if (activeMode === modes[1]) {
 			penColor = '#ffffff';
+			tempBox.style.opacity = 0;
 		}
 		if (activeMode === modes[2]) {
 			penColor = rainbow();
