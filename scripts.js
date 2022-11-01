@@ -1,9 +1,9 @@
 const defaultGridSize = 16;
-const defaultPenColor = [0,0,0];
-const modes = ['pen', 'eraser', 'rainbow'];
+const defaultPenColor = [0,0,0,1];
+const modes = ['pen', 'eraser', 'rainbow', 'alpha'];
 
 let gridSize = defaultGridSize;
-let penColor = `rgb(${defaultPenColor.join()})`;
+let penColor = `rgba(${defaultPenColor.join()})`;
 let activeMode = modes[0];
 document.getElementById('pen').classList.add('activeButton');
 
@@ -43,16 +43,29 @@ function modeSelector(event) {
 function pen(event) {
     let boxId = event.target.id;
     let tempBox = document.getElementById(boxId);
-	if (activeMode === modes[0]) {
+	if (activeMode != modes[3]) {
+		if (activeMode === modes[0]) {
+			penColor = changePenColor();
+		}
+		if (activeMode === modes[1]) {
+			penColor = '#ffffff';
+		}
+		if (activeMode === modes[2]) {
+			penColor = rainbow();
+		}
+		tempBox.style.backgroundColor = penColor;
+	}
+	if (activeMode === modes[3]) {
 		penColor = changePenColor();
+		let tempBoxAlpha = parseFloat(tempBox.style.opacity);
+		if (isNaN(tempBoxAlpha)) {
+			tempBox.style.backgroundColor = penColor;
+			tempBox.style.opacity = 0.1;
+		} else if (tempBoxAlpha < 1) {
+			tempBox.style.backgroundColor = penColor;
+			tempBox.style.opacity = parseFloat(tempBox.style.opacity) + 0.15;
+		}
 	}
-	if (activeMode === modes[1]) {
-		penColor = '#ffffff';
-	}
-	if (activeMode === modes[2]) {
-		penColor = rainbow();
-	}
-	tempBox.style.backgroundColor = penColor; 
 }
 
 function changePenColor() {
@@ -93,5 +106,17 @@ function rainbow() {
 	return(penColor);
 }
 
+function alpha() {
+	const penPressure = [0,0,0,0.2];
+	penColor = `rgba(${penPressure.join()})`;
+	return(penColor);
+}
+
 drawCanvas();
 changePenColor();
+
+String.prototype.getNums= function(){
+    var rx=/[+-]?((\.\d+)|(\d+(\.\d+)?)([eE][+-]?\d+)?)/g,
+    mapN= this.match(rx) || [];
+    return mapN.map(Number);
+};

@@ -17,6 +17,7 @@
 		<div class="settingsPanel">
 			<div class="toolBox" id="toolBox">
 				<button id="pen" onclick="modeSelector(event)">Pen</button>
+				<button id="alpha" onclick="modeSelector(event)">Pen Presure</button>
 				<button id="eraser" onclick="modeSelector(event)">Eraser</button>
 				<button id="rainbow" onclick="modeSelector(event)">Rainbow</button>
 				<button id="clearCanvas" onclick="resizeCanvas()">Clear</button>
@@ -26,15 +27,18 @@
 				<div>R:</div>
 				<div>G:</div>
 				<div>B:</div>
+				<div>Alpha:</div>
 			</div>
             <div class="sliderBox">
                 <input type="range" min="8" max="100" value="16" class="slider" id="canvasSize" onclick="resizeCanvas()">
 				<input type="range" min="0" max="255" value="0" class="slider" id="penColor" oninput="changePenColor()">
 				<input type="range" min="0" max="255" value="0" class="slider" id="penColor" oninput="changePenColor()">
 				<input type="range" min="0" max="255" value="0" class="slider" id="penColor" oninput="changePenColor()">
+				<input type="range" min="0" max="1" step="0.01" value="1" class="slider" id="penColor" oninput="changePenColor()">
             </div>
             <div class="valuesBox">
                 <div id="canvasSizePrint">16 x 16</div>
+				<div id="printColor">0</div>
 				<div id="printColor">0</div>
 				<div id="printColor">0</div>
 				<div id="printColor">0</div>
