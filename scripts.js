@@ -56,13 +56,14 @@ function pen(event) {
 		tempBox.style.backgroundColor = penColor;
 	}
 	if (activeMode === modes[3]) {
-		penColor = alpha();
-		tempBoxAlpha = tempBox.style.backgroundColor.getNums();
-		if (tempBoxAlpha[3] in window) {
+		penColor = changePenColor();
+		let tempBoxAlpha = parseFloat(tempBox.style.opacity);
+		if (isNaN(tempBoxAlpha)) {
 			tempBox.style.backgroundColor = penColor;
-		} else if (tempBoxAlpha[3] < 1) {
-			tempBoxAlpha[3] += 0.2;
-			tempBox.style.backgroundColor = `rgba(${tempBoxAlpha})`;
+			tempBox.style.opacity = 0.1;
+		} else if (tempBoxAlpha < 1) {
+			tempBox.style.backgroundColor = penColor;
+			tempBox.style.opacity = parseFloat(tempBox.style.opacity) + 0.15;
 		}
 	}
 }
